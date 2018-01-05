@@ -35,7 +35,8 @@ class Haste extends Analyzer {
     [SPELLS.TRUESHOT.id]: 0.4, // MM Hunter main CD
     [SPELLS.ICY_VEINS.id]: 0.3,
     [SPELLS.BONE_SHIELD.id]: 0.1, // Blood BK haste buff from maintaining boneshield
-
+    [SPELLS.METAMORPHOSIS_HAVOC_BUFF.id]: .25, //Havoc DH
+    [SPELLS.BETRAYERS_FURY.id]: .25, //Havoc DH T21 4pc Buff
     // Boss abilities:
     [209166]: 0.3, // DEBUFF - Fast Time from Elisande
     [209165]: -0.3, // DEBUFF - Slow Time from Elisande

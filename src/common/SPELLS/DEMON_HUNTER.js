@@ -254,6 +254,32 @@ export default {
     name: 'Chaos Blades',
     icon: 'inv_glaive_1h_artifactaldrochi_d_03dual',
   },
+  //Havoc Tier
+  HAVOC_DH_T20_2_SET_BONUS: {
+    id: 242226,
+    name: 'T20 2 set bonus',
+    icon: 'ability_demonhunter_bladedance',
+  },
+  HAVOC_DH_T20_4_SET_BONUS: {
+    id: 242227,
+    name: 'T20 4 set bonus',
+    icon: 'ability_demonhunter_specdps',
+  },
+  HAVOC_DH_T21_2_SET_BONUS: {
+    id: 251767,
+    name: 'T21 2 set bonus',
+    icon: 'ability_demonhunter_eyebeam',
+  },
+  HAVOC_DH_T21_4_SET_BONUS: {
+    id: 251769,
+    name: 'T21 4 set bonus',
+    icon: 'ability_demonhunter_eyebeam',
+  },
+  BETRAYERS_FURY: { //Havoc 4pc Buff
+    id: 252165,
+    name: 'Betrayer\'s Fury',
+    icon: 'ability_demonhunter_eyebeam',
+  },
   // Talents
   FRAILTY_SPIRIT_BOMB_DEBUFF: {
     id: 247456,
@@ -270,7 +296,6 @@ export default {
     name: 'Felblade',
     icon: 'ability_demonhunter_felblade',
   },
-
   // Artifact Traits Vengence:
   SOUL_CARVER: {
     id: 207407,

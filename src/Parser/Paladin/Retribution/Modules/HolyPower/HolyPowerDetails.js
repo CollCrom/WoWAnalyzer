@@ -33,13 +33,12 @@ class HolyPowerDetails extends Analyzer {
 
 	suggestions(when) {
 		const hpWasted = this.holyPowerTracker.holyPowerWasted;
-		when(this.suggestionThresholds)
-			.addSuggestion((suggest, actual, recommended) => {
-				return suggest(`You wasted ${formatPercentage(actual)}% of your Holy Power.`)
-					.icon(holyPowerIcon)
-					.actual(`${hpWasted} Holy Power wasted`)
-					.recommended(`Wasting less than ${formatPercentage(recommended)}% is recommended.`);
-			});
+		when(this.suggestionThresholds).addSuggestion((suggest, actual, recommended) => {
+			return suggest(`You wasted ${formatPercentage(actual)}% of your Holy Power.`)
+				.icon(holyPowerIcon)
+				.actual(`${hpWasted} Holy Power wasted`)
+				.recommended(`Wasting less than ${formatPercentage(recommended)}% is recommended.`);
+		});
 	}
 
 	statistic() {

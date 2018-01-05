@@ -1,4 +1,8 @@
+import React from 'react';
+
 import SPELLS from 'common/SPELLS';
+import Wrapper from 'common/Wrapper';
+import SpellLink from 'common/SpellLink';
 import CoreAbilities from 'Parser/Core/Modules/Abilities';
 
 class Abilities extends CoreAbilities {
@@ -94,6 +98,22 @@ class Abilities extends CoreAbilities {
         spell: SPELLS.EYE_BEAM,
         category: Abilities.SPELL_CATEGORIES.COOLDOWNS,
         cooldown: 45,
+        enabled: !combatant.hasBuff(SPELLS.HAVOC_DH_T21_4_SET_BONUS.id),
+      },
+      {
+        spell: SPELLS.EYE_BEAM,
+        category: Abilities.SPELL_CATEGORIES.COOLDOWNS,
+        cooldown: 45,
+        enabled: combatant.hasBuff(SPELLS.HAVOC_DH_T21_4_SET_BONUS.id),
+        castEfficiency: {
+          suggestion: true,
+          recommendedEfficiency: 1,
+          extraSuggestion: (
+            <Wrapper>
+              With 
+            <SpellLink id={SPELLS.HAVOC_DH_T21_4_SET_BONUS.id}/> it is important to use <SpellLink id={SPELLS.EYE_BEAM.id} /> to get high uptime on <SpellLink id={SPELLS.BETRAYERS_FURY} />.</Wrapper>
+          ),
+        },
       },
       {
         spell: SPELLS.DEMONS_BITE,
@@ -119,10 +139,13 @@ class Abilities extends CoreAbilities {
       {
         spell: SPELLS.THROW_GLAIVE_HAVOC,
         category: Abilities.SPELL_CATEGORIES.ROTATIONAL,
+        charges: combatant.hasTalent(SPELLS.MASTER_OF_THE_GLAIVE_TALENT.id) ? 2 : null,
+        cooldown: haste => 10 / (1 + haste),
       },
       {
         spell: SPELLS.FEL_RUSH,
         category: Abilities.SPELL_CATEGORIES.UTILITY,
+        charges: 2,
         cooldown: 10,
       },
       {
